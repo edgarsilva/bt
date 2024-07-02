@@ -1,10 +1,10 @@
 /*
 Copyright © 2024 NAME HERE <EMAIL ADDRESS>
-
 */
 package cmd
 
 import (
+	"crypto/sha256"
 	"fmt"
 
 	"github.com/spf13/cobra"
@@ -13,16 +13,22 @@ import (
 // sha256Cmd represents the sha256 command
 var sha256Cmd = &cobra.Command{
 	Use:   "sha256",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "hashes a string with sha256",
+	Long: `
+sha256 hashing algorithm implemented in the go crypto/sha256 library,
+it hashes the string passed as an arg.`,
+	Run: hashString,
+}
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("sha256 called")
-	},
+func hashString(cmd *cobra.Command, args []string) {
+	if len(args) < 1 {
+		fmt.Println("You must provide a string to use for the Sha256 checksum")
+		return
+	}
+
+	s := args[0]
+	sum := sha256.Sum256([]byte(s))
+	fmt.Printf("%x\n", sum)
 }
 
 func init() {

@@ -13,11 +13,7 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "jbot",
 	Short: "Just a Bunch Of Tools",
-	Long: `Tools to encode/decode b64, generate hashes and random hex strings etc:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Long:  `Tools to encode/decode b64, generate hashes and random hex strings etc.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
@@ -37,7 +33,7 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.go-jbot.yaml)")
+	// rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.bt.yaml)")
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
