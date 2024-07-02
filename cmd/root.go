@@ -11,7 +11,7 @@ import (
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "jbot",
+	Use:   "bt",
 	Short: "Just a Bunch Of Tools",
 	Long:  `Tools to encode/decode b64, generate hashes and random hex strings etc.`,
 	// Uncomment the following line if your bare application

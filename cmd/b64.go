@@ -16,9 +16,9 @@ var b64Cmd = &cobra.Command{
 	Short: "Encodes/Decodes b64 strings",
 	Long: `Example:
 
-	$ jbot b64 some-string
+	$ bt b64 some-string
 	# c29tZS1zdHJpbmc=
-	$ jbot b64 c29tZS1zdHJpbmc= -d
+	$ bt b64 c29tZS1zdHJpbmc= -d
 	# some-string`,
 	Run: b64,
 }
